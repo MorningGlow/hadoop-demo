@@ -126,8 +126,12 @@ public class HadoopApiTest {
      */
     @Test
     public void test8() throws IOException {
-        fileSystem.copyToLocalFile(new Path("/hadoop/java/test/2222.tar.gz"),new Path("C:\\Users\\12755167\\Desktop\\安装包"));
+        // 报错(报指针异常)
+//        fileSystem.copyToLocalFile(new Path("/hadoop/java/test/2222.tar.gz"),new Path("C:\\Users\\12755167\\Desktop\\安装包"));
+        fileSystem.copyToLocalFile(false, new Path("/hadoop/java/test/2222.tar.gz"), new Path("C:\\Users\\12755167\\Desktop\\安装包"), true);
+
     }
+
 
     @After
     public void after() throws IOException {
